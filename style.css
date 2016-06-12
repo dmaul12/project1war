@@ -1,8 +1,8 @@
 .container{
-background-color: white;
+background-color: grey;
+border: 20px solid green;
 height: 700px;
 width: 700px;
-border: 1px solid black;
 }
 h1{
   text-align: center;
@@ -13,7 +13,7 @@ h1{
 }
 #console{
 
-  margin-left: 440px
+  margin-left: 420px
 }
 #title{
 text-align: left;
@@ -22,22 +22,27 @@ margin-left: 290px;
 #title2{
  text-align: right;
  margin-right: 260px;
+ margin-top: -21px;
 }
 
 #cpuscore{
 text-align: left;
 }
 #pscore{
-  text-align: left;
+text-align: left;
+
 }
 #pactual{
   text-align: left;
+  margin-left: 35px;
 }
-#catural{
+#cactual{
   text-align: left;
+  margin-left: 35px;
 }
 #cpu{
 float: left;
+background-color: white;
 text-align: center;
 width: 100px;
 height: 100px;
@@ -47,6 +52,7 @@ margin: 20px 20px 20px 280px;
 
 #player{
 text-align:  center;
+background-color: #fafafa;
 float: right;
 width: 100px;
 height: 100px;
@@ -55,9 +61,17 @@ margin: 20px 230px 20px 70px;
 }
 
 #button{
-margin: -15px 20px 20px 445px;
+margin: -15px 20px 20px 585px;
+background-color: black;
+font-weight: bold;
+color: white;
+font-size: 12px;
 }
 
 #deal{
-margin: 80px 20px 20px 700px;
+margin: 80px 20px 20px 430px;
+background-color: black;
+font-weight: bold;
+color: white;
+font-size: 12px;
 }

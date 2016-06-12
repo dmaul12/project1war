@@ -7,9 +7,10 @@ $(document).ready(function(){
   var K = "13"
   var A = "14"
 var suits = ["H", "S", "D", "C"]; //image here?
-// var values = [2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K, A];
+
 var values = [A, "2", "3", "4", "5", "6", "7", "8", "9", "10", J, Q, K];
 var fullDeck =[];
+var bet=0;
 var playerScore = 0;
 var cScore = 0;
 
@@ -32,7 +33,7 @@ function shuffleCards() {
     fullDeck[j]= temp;
 
 }
-// console.log(fullDeck)
+console.log(fullDeck)
 }
 shuffleCards();
 
@@ -40,58 +41,64 @@ cpu = fullDeck.slice(0, 26);
 player = fullDeck.slice(26);
 
 
-// console.log(cpu);
-// console.log(player);
 
 $('#deal').click(compareCards);
+
 
 
 function compareCards(){
 
 document.getElementById('pactual').innerHTML=playerScore;
 document.getElementById('cactual').innerHTML=cScore;
+
  card1= cpu.shift();
  card2= player.shift();
-  if(parseInt(card1)>parseInt(card2)){
-    cScore=cScore+1;
-  document.getElementById('player').innerHTML = player[0];
-  document.getElementById('cpu').innerHTML = cpu[0];
-    document.getElementById('console').innerHTML="Computer wins hand"
-      }else if(parseInt(card2)>parseInt(card1)){
-      //point player
-      playerScore=playerScore+1;
-  document.getElementById('player').innerHTML = player[0];
-  document.getElementById('cpu').innerHTML = cpu[0];
-     document.getElementById('console').innerHTML="Player wins hand"
-     }
 
-else{
-      document.getElementById('console').innerHTML="Tie Breaker!"
-        return tieBreaker;
+  if(parseInt(card1)>parseInt(card2)){
+    cScore+=1;
+  document.getElementById('player').innerHTML = player[0];
+  document.getElementById('cpu').innerHTML = cpu[0];
+  document.getElementById('console').innerHTML="Computer wins hand";
+
+      }else if(parseInt(card2)>parseInt(card1)){
+    playerScore+=1;
+  document.getElementById('player').innerHTML = player[0];
+  document.getElementById('cpu').innerHTML = cpu[0];
+  document.getElementById('console').innerHTML="Player wins hand";
+
+      }else{
+  document.getElementById('console').innerHTML="Tie Breaker! 3 Cards Played";
+  prompt("Place a bet?")
+      return tieBreaker;
       }
-       console.log(cpu);
+     console.log(cpu);
      console.log(player);
       }
 function tieBreaker(){
+
+ var bet=""
+ var betInput=""
+ prompt("Place a bet?")
   //append "I declare war" on screen
  card1= cpu.splice(0,2);
  card2= player.splice(0,2);
-    if(parseInt(card1)>parseInt(card2)){
-    // point cpu
-    cScore=cScore+1;
+//point computer
+  if(parseInt(card1)>parseInt(card2)){
+  cScore=cScore+1;
   document.getElementById('player').innerHTML = player[0];
   document.getElementById('cpu').innerHTML = cpu[0];
-    document.getElementById('console').innerHTML="Computer wins hand"
-      }else if(parseInt(card2)>parseInt(card1)){
-      //point player
-      playerScore=playerScore+1
+  document.getElementById('console').innerHTML="Computer wins hand";
+
+  }else if(parseInt(card2)>parseInt(card1)){
+//point player
+  playerScore=playerScore+1;
   document.getElementById('player').innerHTML = player[0];
   document.getElementById('cpu').innerHTML = cpu[0];
-     document.getElementById('console').innerHTML="Player wins hand"
-     }
+  document.getElementById('console').innerHTML="Player wins hand";
+  }
 
 else{
-      document.getElementById('console').innerHTML="Tie Breaker!"
+      document.getElementById('console').innerHTML="Tie Breaker!";
         return tieBreaker;
       }
 }
