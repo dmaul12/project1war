@@ -53,6 +53,8 @@ document.getElementById('cactual').innerHTML=cScore;
 
  card1= cpu.shift();
  card2= player.shift();
+ document.getElementById('player').innerHTML = player[0];
+  document.getElementById('cpu').innerHTML = cpu[0];
 
   if(parseInt(card1)>parseInt(card2)){
     cScore+=1;
@@ -62,62 +64,34 @@ document.getElementById('cactual').innerHTML=cScore;
 
       }else if(parseInt(card2)>parseInt(card1)){
     playerScore+=1;
+    bet+=10;
   document.getElementById('player').innerHTML = player[0];
   document.getElementById('cpu').innerHTML = cpu[0];
   document.getElementById('console').innerHTML="Player wins hand";
-
+  document.getElementById('winnings').innerHTML = bet[0];
       }else{
   document.getElementById('console').innerHTML="Tie Breaker! 3 Cards Played";
-  prompt("Place a bet?")
+
       return tieBreaker;
       }
      console.log(cpu);
      console.log(player);
-      }
+}
 function tieBreaker(){
 
- var bet=""
- var betInput=""
- prompt("Place a bet?")
   //append "I declare war" on screen
  card1= cpu.splice(0,2);
  card2= player.splice(0,2);
-//point computer
-  if(parseInt(card1)>parseInt(card2)){
-  cScore=cScore+1;
-  document.getElementById('player').innerHTML = player[0];
-  document.getElementById('cpu').innerHTML = cpu[0];
-  document.getElementById('console').innerHTML="Computer wins hand";
+  var b = prompt("place bet")
+  var num1= parseInt(b)
+  document.getElementById('cash').innerHTML = num1;
+ // if(parseInt(card2)>parseInt(card1)){
+ //  document.getElementById('winnings').innerHTML = num1*2;
+ // }
 
-  }else if(parseInt(card2)>parseInt(card1)){
-//point player
-  playerScore=playerScore+1;
-  document.getElementById('player').innerHTML = player[0];
-  document.getElementById('cpu').innerHTML = cpu[0];
-  document.getElementById('console').innerHTML="Player wins hand";
-  }
-
-else{
-      document.getElementById('console').innerHTML="Tie Breaker!";
-        return tieBreaker;
-      }
 }
 compareCards();
-
-
-
-// if(cpu[0].length ===3{
-//   return 10
-// }
-
-// var randomCard = function(){
-//   var randomNum1 = Math.floor(Math.random()*cpu.length);
-//   var randomNum2 = Math.floor(Math.random()*player.length);
-// }
-//   var card1 = cpu[randomNum1];
-//   var card2 = player[randomNum2];
-//   value1 = convertValue(cpu);
-//   value2 = convertValue(player);
+tieBreaker();
 
 // var convertValue= function(fullDeck){
 //     if (fullDeck[0] === 'A'){
@@ -134,12 +108,6 @@ compareCards();
 //     return parseInt(fullDeck[0]);
 //   }
 
-// }
-// console.log(cpu, player)
-// console.log(value1, value2)
 
-  // var value1 = convertValue(card1);
-  // var value2 = convertValue(card2);
-  // console.log(value1, value2)
 })
 

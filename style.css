@@ -40,6 +40,21 @@ text-align: left;
   text-align: left;
   margin-left: 35px;
 }
+#money{
+ text-align: left;
+
+}
+#cash{
+  text-align: left;
+  margin-left: 35px;
+}
+#cwon{
+  text-align: left;
+}
+#winnings{
+  text-align: left;
+  margin-left: 35px;
+}
 #cpu{
 float: left;
 background-color: white;
